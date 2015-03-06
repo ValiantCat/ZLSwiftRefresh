@@ -13,10 +13,10 @@
 		48FD58CF1AA95BC6007F7CE8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FD58CE1AA95BC6007F7CE8 /* Images.xcassets */; };
 		48FD58D21AA95BC6007F7CE8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FD58D01AA95BC6007F7CE8 /* LaunchScreen.xib */; };
 		48FD58DE1AA95BC6007F7CE8 /* ZLSwiftRefreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58DD1AA95BC6007F7CE8 /* ZLSwiftRefreshTests.swift */; };
-		48FD58E81AA95C12007F7CE8 /* ZLSwiftRefreshExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58E71AA95C12007F7CE8 /* ZLSwiftRefreshExtension.swift */; };
-		48FD58EA1AA988B7007F7CE8 /* ZLSwiftHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58E91AA988B7007F7CE8 /* ZLSwiftHeadView.swift */; };
-		48FD58EC1AA98C74007F7CE8 /* ZLSwiftFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58EB1AA98C74007F7CE8 /* ZLSwiftFootView.swift */; };
-		48FD58EE1AA9A1A4007F7CE8 /* ZLSwiftConstDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58ED1AA9A1A4007F7CE8 /* ZLSwiftConstDefine.swift */; };
+		48FD58F41AA9A495007F7CE8 /* ZLSwiftConstDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58F01AA9A495007F7CE8 /* ZLSwiftConstDefine.swift */; };
+		48FD58F51AA9A495007F7CE8 /* ZLSwiftFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58F11AA9A495007F7CE8 /* ZLSwiftFootView.swift */; };
+		48FD58F61AA9A495007F7CE8 /* ZLSwiftHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58F21AA9A495007F7CE8 /* ZLSwiftHeadView.swift */; };
+		48FD58F71AA9A495007F7CE8 /* ZLSwiftRefreshExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58F31AA9A495007F7CE8 /* ZLSwiftRefreshExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,10 @@
 		48FD58D71AA95BC6007F7CE8 /* ZLSwiftRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZLSwiftRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FD58DC1AA95BC6007F7CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48FD58DD1AA95BC6007F7CE8 /* ZLSwiftRefreshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLSwiftRefreshTests.swift; sourceTree = "<group>"; };
-		48FD58E71AA95C12007F7CE8 /* ZLSwiftRefreshExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftRefreshExtension.swift; sourceTree = "<group>"; };
-		48FD58E91AA988B7007F7CE8 /* ZLSwiftHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftHeadView.swift; sourceTree = "<group>"; };
-		48FD58EB1AA98C74007F7CE8 /* ZLSwiftFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftFootView.swift; sourceTree = "<group>"; };
-		48FD58ED1AA9A1A4007F7CE8 /* ZLSwiftConstDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftConstDefine.swift; sourceTree = "<group>"; };
+		48FD58F01AA9A495007F7CE8 /* ZLSwiftConstDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftConstDefine.swift; sourceTree = "<group>"; };
+		48FD58F11AA9A495007F7CE8 /* ZLSwiftFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftFootView.swift; sourceTree = "<group>"; };
+		48FD58F21AA9A495007F7CE8 /* ZLSwiftHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftHeadView.swift; sourceTree = "<group>"; };
+		48FD58F31AA9A495007F7CE8 /* ZLSwiftRefreshExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftRefreshExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,16 +85,13 @@
 		48FD58C41AA95BC6007F7CE8 /* ZLSwiftRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				48FD58EF1AA9A495007F7CE8 /* ZLSwifthRefresh */,
 				48FD58C71AA95BC6007F7CE8 /* AppDelegate.swift */,
 				48FD58C91AA95BC6007F7CE8 /* ViewController.swift */,
 				48FD58CB1AA95BC6007F7CE8 /* Main.storyboard */,
 				48FD58CE1AA95BC6007F7CE8 /* Images.xcassets */,
 				48FD58D01AA95BC6007F7CE8 /* LaunchScreen.xib */,
 				48FD58C51AA95BC6007F7CE8 /* Supporting Files */,
-				48FD58E71AA95C12007F7CE8 /* ZLSwiftRefreshExtension.swift */,
-				48FD58E91AA988B7007F7CE8 /* ZLSwiftHeadView.swift */,
-				48FD58EB1AA98C74007F7CE8 /* ZLSwiftFootView.swift */,
-				48FD58ED1AA9A1A4007F7CE8 /* ZLSwiftConstDefine.swift */,
 			);
 			path = ZLSwiftRefresh;
 			sourceTree = "<group>";
@@ -122,6 +119,17 @@
 				48FD58DC1AA95BC6007F7CE8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48FD58EF1AA9A495007F7CE8 /* ZLSwifthRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				48FD58F01AA9A495007F7CE8 /* ZLSwiftConstDefine.swift */,
+				48FD58F11AA9A495007F7CE8 /* ZLSwiftFootView.swift */,
+				48FD58F21AA9A495007F7CE8 /* ZLSwiftHeadView.swift */,
+				48FD58F31AA9A495007F7CE8 /* ZLSwiftRefreshExtension.swift */,
+			);
+			path = ZLSwifthRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,12 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48FD58EE1AA9A1A4007F7CE8 /* ZLSwiftConstDefine.swift in Sources */,
-				48FD58EA1AA988B7007F7CE8 /* ZLSwiftHeadView.swift in Sources */,
-				48FD58EC1AA98C74007F7CE8 /* ZLSwiftFootView.swift in Sources */,
+				48FD58F41AA9A495007F7CE8 /* ZLSwiftConstDefine.swift in Sources */,
+				48FD58F61AA9A495007F7CE8 /* ZLSwiftHeadView.swift in Sources */,
 				48FD58CA1AA95BC6007F7CE8 /* ViewController.swift in Sources */,
+				48FD58F51AA9A495007F7CE8 /* ZLSwiftFootView.swift in Sources */,
 				48FD58C81AA95BC6007F7CE8 /* AppDelegate.swift in Sources */,
-				48FD58E81AA95C12007F7CE8 /* ZLSwiftRefreshExtension.swift in Sources */,
+				48FD58F71AA9A495007F7CE8 /* ZLSwiftRefreshExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
