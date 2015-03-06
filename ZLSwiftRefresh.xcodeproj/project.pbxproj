@@ -16,6 +16,7 @@
 		48FD58E81AA95C12007F7CE8 /* ZLSwiftRefreshExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58E71AA95C12007F7CE8 /* ZLSwiftRefreshExtension.swift */; };
 		48FD58EA1AA988B7007F7CE8 /* ZLSwiftHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58E91AA988B7007F7CE8 /* ZLSwiftHeadView.swift */; };
 		48FD58EC1AA98C74007F7CE8 /* ZLSwiftFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58EB1AA98C74007F7CE8 /* ZLSwiftFootView.swift */; };
+		48FD58EE1AA9A1A4007F7CE8 /* ZLSwiftConstDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58ED1AA9A1A4007F7CE8 /* ZLSwiftConstDefine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		48FD58E71AA95C12007F7CE8 /* ZLSwiftRefreshExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftRefreshExtension.swift; sourceTree = "<group>"; };
 		48FD58E91AA988B7007F7CE8 /* ZLSwiftHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftHeadView.swift; sourceTree = "<group>"; };
 		48FD58EB1AA98C74007F7CE8 /* ZLSwiftFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftFootView.swift; sourceTree = "<group>"; };
+		48FD58ED1AA9A1A4007F7CE8 /* ZLSwiftConstDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftConstDefine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				48FD58E71AA95C12007F7CE8 /* ZLSwiftRefreshExtension.swift */,
 				48FD58E91AA988B7007F7CE8 /* ZLSwiftHeadView.swift */,
 				48FD58EB1AA98C74007F7CE8 /* ZLSwiftFootView.swift */,
+				48FD58ED1AA9A1A4007F7CE8 /* ZLSwiftConstDefine.swift */,
 			);
 			path = ZLSwiftRefresh;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FD58EE1AA9A1A4007F7CE8 /* ZLSwiftConstDefine.swift in Sources */,
 				48FD58EA1AA988B7007F7CE8 /* ZLSwiftHeadView.swift in Sources */,
 				48FD58EC1AA98C74007F7CE8 /* ZLSwiftFootView.swift in Sources */,
 				48FD58CA1AA95BC6007F7CE8 /* ViewController.swift in Sources */,

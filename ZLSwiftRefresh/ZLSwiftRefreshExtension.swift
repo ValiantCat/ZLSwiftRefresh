@@ -12,16 +12,6 @@ enum RefreshStatus{
     case Normal, Refresh, LoadMore
 }
 
-/** public params config */
-let ZLSwithRefreshHeadViewHeight:CGFloat = 60
-let ZLSwithRefreshFootViewHeight:CGFloat = 60
-let ZLSwithRefreshHeadViewText = "下拉加载刷新"
-let ZLSwithRefreshFootViewText = "上啦加载更多"
-let ZLSwithRefreshMessageText  = "松开刷新"
-let ZLSwithRefreshSuccessText  = "刷新成功"
-let ZLSwithRefreshFailurText   = "刷新失败"
-let ZLSwithRefreshLoadingText  = "正在加载..."
-
 let contentOffsetKeyPath = "contentOffset"
 var addObserverNum:NSInteger = 0;
 var headerView:ZLSwiftHeadView = ZLSwiftHeadView(frame: CGRectZero)
@@ -94,8 +84,10 @@ extension UIScrollView: UIScrollViewDelegate {
             // 提示 -》松开刷新
             if scrollView.dragging == false && loading == false{
                 if refreshTempAction != nil {
+                    loading = true
                     refreshTempAction()
                     refreshTempAction = {}
+                    loading = false
                 }
             }
             
@@ -112,8 +104,10 @@ extension UIScrollView: UIScrollViewDelegate {
             if (nowContentOffsetY - tableViewMaxHeight) > ZLSwithRefreshFootViewHeight * 0.5{
                 if scrollView.dragging == false && loading == false{
                     if loadMoreTempAction != nil {
+                        loading = true
                         loadMoreTempAction()
                         loadMoreTempAction = {}
+                        loading = false
                     }
                 }
                 

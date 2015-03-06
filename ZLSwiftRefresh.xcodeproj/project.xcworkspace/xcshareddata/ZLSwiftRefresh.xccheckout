@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3AE55A06-53A5-4A64-9C28-280E447E4AB8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ZLSwiftRefresh</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AF665359059C6876C2A4A24D54A2630D02FE8CD8</key>
+		<string>https://github.com/MakeZL/ZLSwiftRefresh.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ZLSwiftRefresh.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AF665359059C6876C2A4A24D54A2630D02FE8CD8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MakeZL/ZLSwiftRefresh.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AF665359059C6876C2A4A24D54A2630D02FE8CD8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AF665359059C6876C2A4A24D54A2630D02FE8CD8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ZLSwiftRefresh</string>
+		</dict>
+	</array>
+</dict>
+</plist>
