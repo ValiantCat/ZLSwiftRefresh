@@ -14,10 +14,12 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 下拉刷新
         self.tableView.toRefreshAction({ () -> () in
             println("toRefreshAction success")
         })
         
+        // 上啦加载更多
         self.tableView.toLoadMoreAction({ () -> () in
             println("toLoadMoreAction success")
         })
