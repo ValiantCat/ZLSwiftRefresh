@@ -15,12 +15,10 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.toRefreshAction({ () -> () in
-            sleep(1)
             println("toRefreshAction success")
         })
         
         self.tableView.toLoadMoreAction({ () -> () in
-            sleep(1)
             println("toLoadMoreAction success")
         })
         

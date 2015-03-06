@@ -33,6 +33,7 @@ var loadMoreAction: (() -> ()) = {}
 var refreshTempAction:(() -> ()) = {}
 var loadMoreTempAction:(() -> ()) = {}
 var refreshStatus:RefreshStatus = .Normal
+var loading:Bool = false
 
 extension UIScrollView: UIScrollViewDelegate {
     
@@ -91,11 +92,14 @@ extension UIScrollView: UIScrollViewDelegate {
         // 下拉刷新
         if (scrollViewContentOffsetY < -ZLSwithRefreshHeadViewHeight * 0.5) {
             // 提示 -》松开刷新
-            if refreshTempAction != nil {
-                refreshTempAction()
-                refreshTempAction = {}
+            if scrollView.dragging == false && loading == false{
+                if refreshTempAction != nil {
+                    refreshTempAction()
+                    refreshTempAction = {}
+                }
             }
             
+            headerView.title = ZLSwithRefreshMessageText
         }else{
             refreshTempAction = refreshAction
             headerView.title = ZLSwithRefreshHeadViewText
@@ -106,10 +110,14 @@ extension UIScrollView: UIScrollViewDelegate {
             var nowContentOffsetY:CGFloat = scrollView.contentOffset.y + self.frame.size.height
             var tableViewMaxHeight:CGFloat = CGRectGetMidY(tempTableView.tableFooterView!.frame)
             if (nowContentOffsetY - tableViewMaxHeight) > ZLSwithRefreshFootViewHeight * 0.5{
-                if loadMoreTempAction != nil {
-                    loadMoreTempAction()
-                    loadMoreTempAction = {}
+                if scrollView.dragging == false && loading == false{
+                    if loadMoreTempAction != nil {
+                        loadMoreTempAction()
+                        loadMoreTempAction = {}
+                    }
                 }
+                
+                footView.title = ZLSwithRefreshMessageText
             }else{
                 loadMoreTempAction = loadMoreAction
                 footView.title = ZLSwithRefreshFootViewText
