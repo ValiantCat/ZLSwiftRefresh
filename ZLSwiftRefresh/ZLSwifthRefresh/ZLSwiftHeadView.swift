@@ -11,6 +11,7 @@ import UIKit
 class ZLSwiftHeadView: UIView {
     
     var headLabel: UILabel = UILabel()
+    var headImageView : UIImageView = UIImageView()
     
     var title:String {
         set {
@@ -19,6 +20,17 @@ class ZLSwiftHeadView: UIView {
         
         get {
             return headLabel.text!
+        }
+    }
+    
+    var imgName:String {
+        set {
+            self.headImageView.image = UIImage(named: "dropdown_anim__000\(newValue)")
+            self.headLabel.hidden = true
+        }
+        
+        get {
+            return self.imgName
         }
     }
     
@@ -34,11 +46,37 @@ class ZLSwiftHeadView: UIView {
     }
     
     func setupUI(){
-        var headTitleLabel:UILabel = UILabel(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
-        headTitleLabel.textAlignment = .Center
-        headTitleLabel.text = ZLSwithRefreshHeadViewText
-        self.addSubview(headTitleLabel)
-        headLabel = headTitleLabel
+//        var headTitleLabel:UILabel = UILabel(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
+//        headTitleLabel.textAlignment = .Center
+//        headTitleLabel.text = ZLSwithRefreshHeadViewText
+//        self.addSubview(headTitleLabel)
+//        headLabel = headTitleLabel
+        
+        var headImageView:UIImageView = UIImageView(frame: CGRectMake(0, 0, 50, 50))
+        headImageView.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height * 0.5)
+        headImageView.contentMode = .Center
+        headImageView.clipsToBounds = true;
+        headImageView.image = UIImage(named: "dropdown_anim__0001.png")
+        self.addSubview(headImageView)
+        self.headImageView = headImageView
+        
     }
 
+    func startAnimation(){
+        var results:[AnyObject] = [
+            UIImage(named: "dropdown_loading_01.png")!,
+            UIImage(named: "dropdown_loading_02.png")!,
+            UIImage(named: "dropdown_loading_03.png")!
+        ]
+        
+        self.headImageView.animationImages = results as [AnyObject]?
+        self.headImageView.animationDuration = 0.6;
+        self.headImageView.animationRepeatCount = 0;
+        self.headImageView.startAnimating()
+    }
+    
+    func stopAnimation(){
+        self.headImageView.stopAnimating()
+    }
 }
+

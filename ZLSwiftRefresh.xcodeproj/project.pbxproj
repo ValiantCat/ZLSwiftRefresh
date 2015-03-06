@@ -17,6 +17,7 @@
 		48FD58F51AA9A495007F7CE8 /* ZLSwiftFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58F11AA9A495007F7CE8 /* ZLSwiftFootView.swift */; };
 		48FD58F61AA9A495007F7CE8 /* ZLSwiftHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58F21AA9A495007F7CE8 /* ZLSwiftHeadView.swift */; };
 		48FD58F71AA9A495007F7CE8 /* ZLSwiftRefreshExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD58F31AA9A495007F7CE8 /* ZLSwiftRefreshExtension.swift */; };
+		48FD58F91AA9AAC1007F7CE8 /* ZLSwiftRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48FD58F81AA9AAC1007F7CE8 /* ZLSwiftRefresh.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		48FD58F11AA9A495007F7CE8 /* ZLSwiftFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftFootView.swift; sourceTree = "<group>"; };
 		48FD58F21AA9A495007F7CE8 /* ZLSwiftHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftHeadView.swift; sourceTree = "<group>"; };
 		48FD58F31AA9A495007F7CE8 /* ZLSwiftRefreshExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwiftRefreshExtension.swift; sourceTree = "<group>"; };
+		48FD58F81AA9AAC1007F7CE8 /* ZLSwiftRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZLSwiftRefresh.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		48FD58C41AA95BC6007F7CE8 /* ZLSwiftRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				48FD58F81AA9AAC1007F7CE8 /* ZLSwiftRefresh.bundle */,
 				48FD58EF1AA9A495007F7CE8 /* ZLSwifthRefresh */,
 				48FD58C71AA95BC6007F7CE8 /* AppDelegate.swift */,
 				48FD58C91AA95BC6007F7CE8 /* ViewController.swift */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48FD58CD1AA95BC6007F7CE8 /* Main.storyboard in Resources */,
+				48FD58F91AA9AAC1007F7CE8 /* ZLSwiftRefresh.bundle in Resources */,
 				48FD58D21AA95BC6007F7CE8 /* LaunchScreen.xib in Resources */,
 				48FD58CF1AA95BC6007F7CE8 /* Images.xcassets in Resources */,
 			);

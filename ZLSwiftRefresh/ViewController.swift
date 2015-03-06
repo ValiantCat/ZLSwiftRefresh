@@ -16,12 +16,18 @@ class ViewController: UITableViewController {
         
         // 下拉刷新
         self.tableView.toRefreshAction({ () -> () in
-            println("toRefreshAction success")
+            self.delay(2.0, closure: { () -> () in
+                println("toRefreshAction success")
+                self.tableView.stopAnimation()
+            })
         })
         
         // 上啦加载更多
         self.tableView.toLoadMoreAction({ () -> () in
-            println("toLoadMoreAction success")
+            self.delay(1.0, closure: { () -> () in
+                println("toLoadMoreAction success")
+                self.tableView.stopAnimation()
+            });
         })
         
     }
@@ -46,7 +52,15 @@ class ViewController: UITableViewController {
         return cell
     }
     
-
+        
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
     
 }
 

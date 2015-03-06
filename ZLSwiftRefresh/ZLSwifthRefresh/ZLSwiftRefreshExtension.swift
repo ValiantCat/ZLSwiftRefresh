@@ -23,7 +23,7 @@ var loadMoreAction: (() -> ()) = {}
 var refreshTempAction:(() -> ()) = {}
 var loadMoreTempAction:(() -> ()) = {}
 var refreshStatus:RefreshStatus = .Normal
-var loading:Bool = false
+let animations:CGFloat = 60.0
 
 extension UIScrollView: UIScrollViewDelegate {
     
@@ -44,14 +44,13 @@ extension UIScrollView: UIScrollViewDelegate {
     //MARK: AddHeadView && FootView
     func addHeadView(){
         var headView:ZLSwiftHeadView = ZLSwiftHeadView(frame: CGRectMake(0, -ZLSwithRefreshHeadViewHeight, self.frame.size.width, ZLSwithRefreshHeadViewHeight))
-        headView.backgroundColor = UIColor.redColor()
         self.addSubview(headView)
         headerView = headView
     }
     
     func addFootView(){
         footView = ZLSwiftFootView(frame: CGRectMake(0, -ZLSwithRefreshFootViewHeight, self.frame.size.width, ZLSwithRefreshHeadViewHeight))
-        footView.backgroundColor = UIColor.redColor()
+        footView.backgroundColor = UIColor.lightGrayColor()
         
         let tempTableView :UITableView = self as UITableView
         tempTableView.tableFooterView = footView
@@ -76,25 +75,34 @@ extension UIScrollView: UIScrollViewDelegate {
 
         var scrollView = self
         let tempTableView :UITableView = self as UITableView
-        var scrollViewContentOffsetY = scrollView.contentOffset.y
+        var scrollViewContentOffsetY:CGFloat = scrollView.contentOffset.y
 
         
         // 下拉刷新
-        if (scrollViewContentOffsetY < -ZLSwithRefreshHeadViewHeight * 0.5) {
+        if (scrollViewContentOffsetY <= -ZLSwithRefreshHeadViewHeight) {
             // 提示 -》松开刷新
-            if scrollView.dragging == false && loading == false{
+            if scrollView.dragging == false && headerView.headImageView.isAnimating() == false{
                 if refreshTempAction != nil {
-                    loading = true
+                    refreshStatus = .Refresh
+                    headerView.startAnimation()
+                    UIView.animateWithDuration(0.25, animations: { () -> Void in
+                        scrollView.contentInset = UIEdgeInsetsMake(ZLSwithRefreshHeadViewHeight, 0, scrollView.contentInset.bottom, 0)
+                    })
                     refreshTempAction()
                     refreshTempAction = {}
-                    loading = false
                 }
             }
-            
-            headerView.title = ZLSwithRefreshMessageText
+
         }else{
+            
             refreshTempAction = refreshAction
-            headerView.title = ZLSwithRefreshHeadViewText
+            
+            var v:CGFloat = scrollViewContentOffsetY
+            if (v < -animations){
+                v = animations
+            }
+            
+            headerView.imgName = "\((Int)(abs(v)))"
         }
         
         if tempTableView.tableFooterView != nil && scrollViewContentOffsetY > 0{
@@ -102,16 +110,25 @@ extension UIScrollView: UIScrollViewDelegate {
             var nowContentOffsetY:CGFloat = scrollView.contentOffset.y + self.frame.size.height
             var tableViewMaxHeight:CGFloat = CGRectGetMidY(tempTableView.tableFooterView!.frame)
             if (nowContentOffsetY - tableViewMaxHeight) > ZLSwithRefreshFootViewHeight * 0.5{
-                if scrollView.dragging == false && loading == false{
+                if scrollView.dragging == false {
                     if loadMoreTempAction != nil {
-                        loading = true
-                        loadMoreTempAction()
-                        loadMoreTempAction = {}
-                        loading = false
+                        
+                        refreshStatus = .LoadMore
+                        UIView.animateWithDuration(0.25, animations: { () -> Void in
+                            scrollView.contentInset = UIEdgeInsetsMake(scrollView.contentInset.top, 0, 0, 0)
+                        })
+                        footView.title = ZLSwithRefreshLoadingText
+                        if(loadMoreTempAction != nil){
+                            loadMoreTempAction()
+                            loadMoreTempAction = {}
+                        }
+                        
+                    } else {
+                        footView.title = ZLSwithRefreshMessageText
                     }
                 }
                 
-                footView.title = ZLSwithRefreshMessageText
+
             }else{
                 loadMoreTempAction = loadMoreAction
                 footView.title = ZLSwithRefreshFootViewText
@@ -119,4 +136,21 @@ extension UIScrollView: UIScrollViewDelegate {
         }
     }
     
+    func stopAnimation(){
+        if headerView.headImageView.isAnimating() {
+            headerView.stopAnimation()
+        }
+        
+        if refreshStatus == .LoadMore {
+            UIView.animateWithDuration(0.25, animations: { () -> Void in
+                self.contentInset = UIEdgeInsetsMake(self.contentInset.top, 0, -ZLSwithRefreshFootViewHeight, 0)
+            })
+        }else if refreshStatus == .Refresh {
+            UIView.animateWithDuration(0.25, animations: { () -> Void in
+                self.contentInset = UIEdgeInsetsMake(0, 0, self.contentInset.bottom, 0)
+            })
+        }
+    }
+
 }
+
