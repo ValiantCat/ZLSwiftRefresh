@@ -11,6 +11,9 @@ import Foundation
 
 class ViewController: UITableViewController {
 
+    // default datas
+    var datas:Int = 30
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +21,8 @@ class ViewController: UITableViewController {
         self.tableView.toRefreshAction({ () -> () in
             self.delay(2.0, closure: { () -> () in
                 println("toRefreshAction success")
+                self.datas += 30
+                self.tableView.reloadData()
                 self.tableView.stopAnimation()
             })
         })
@@ -26,6 +31,8 @@ class ViewController: UITableViewController {
         self.tableView.toLoadMoreAction({ () -> () in
             self.delay(1.0, closure: { () -> () in
                 println("toLoadMoreAction success")
+                self.datas += 30
+                self.tableView.reloadData()
                 self.tableView.stopAnimation()
             });
         })
@@ -38,7 +45,7 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30;
+        return self.datas;
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

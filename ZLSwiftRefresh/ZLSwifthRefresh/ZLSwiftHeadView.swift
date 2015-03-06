@@ -46,12 +46,6 @@ class ZLSwiftHeadView: UIView {
     }
     
     func setupUI(){
-//        var headTitleLabel:UILabel = UILabel(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
-//        headTitleLabel.textAlignment = .Center
-//        headTitleLabel.text = ZLSwithRefreshHeadViewText
-//        self.addSubview(headTitleLabel)
-//        headLabel = headTitleLabel
-        
         var headImageView:UIImageView = UIImageView(frame: CGRectMake(0, 0, 50, 50))
         headImageView.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height * 0.5)
         headImageView.contentMode = .Center
